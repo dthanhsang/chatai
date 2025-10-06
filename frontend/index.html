@@ -2,27 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CHAT DTS AI </title>
+  <title>DTS Gemini Chat</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🚀 DTS AI</h1>
-  </header>
+  <div class="chat-container">
+    <header>
+      <h1>🤖 Gemini 2.0 Flash</h1>
+    </header>
 
-  <section class="hero">
-    <h2>Hello, I'm Your Name</h2>
-    <p>I build AI & futuristic experiences.</p>
-  </section>
+    <div id="messages" class="messages"></div>
 
-  <section class="chat">
-    <h3>🤖 Chat with my DTS AI</h3>
-    <div id="messages"></div>
-    <input id="prompt" placeholder="Bạn có suy nghĩ gì....">
-    <input type="file" id="image" accept="image/*">
-    <button onclick="sendMessage()">Send</button>
-  </section>
+    <div class="input-area">
+      <input type="text" id="prompt" placeholder="Bạn có suy nghĩ gì..." />
+      <input type="file" id="image" accept="image/*"/>
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
 
   <script type="module" src="script.js"></script>
 </body>
 </html>
+
