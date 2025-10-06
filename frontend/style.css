@@ -12,21 +12,23 @@ body {
 .chat-container {
   width: 400px;
   max-width: 90%;
-  background: linear-gradient(145deg, #1a1a2e, #162447);
-  border-radius: 15px;
+  background: #0b0b1a;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 0 20px #00fff7;
+  box-shadow: 0 0 20px #00fff7, 0 0 50px #00fff7 inset;
+  border: 1px solid #00fff7;
 }
 
 header {
   padding: 15px;
-  background: #162447;
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
-  border-bottom: 1px solid #00fff7;
+  background: #0a0a1f;
+  color: #00fff7;
+  text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
 }
 
 .messages {
@@ -36,6 +38,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  scroll-behavior: smooth;
 }
 
 .message {
@@ -43,39 +46,48 @@ header {
   padding: 10px 15px;
   border-radius: 20px;
   word-wrap: break-word;
+  animation: fadeIn 0.3s ease;
 }
 
 .message.user {
   align-self: flex-end;
   background: #00fff7;
   color: #000;
+  box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7 inset;
 }
 
 .message.bot {
   align-self: flex-start;
   background: #1a1a2e;
   border: 1px solid #00fff7;
+  color: #fff;
+  text-shadow: 0 0 5px #00fff7;
 }
 
 .message img {
   max-width: 100%;
   border-radius: 10px;
   margin-top: 5px;
+  box-shadow: 0 0 10px #00fff7;
 }
 
 .input-area {
   display: flex;
   padding: 10px;
-  background: #162447;
+  background: #0a0a1f;
   gap: 5px;
+  border-top: 1px solid #00fff7;
 }
 
 .input-area input[type="text"] {
   flex: 1;
   padding: 10px;
   border-radius: 20px;
-  border: none;
+  border: 1px solid #00fff7;
   outline: none;
+  background: #0b0b1a;
+  color: #fff;
+  box-shadow: 0 0 10px #00fff7 inset;
 }
 
 .input-area input[type="file"] {
@@ -89,4 +101,16 @@ header {
   background: #00fff7;
   color: #000;
   cursor: pointer;
+  box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7 inset;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.input-area button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7 inset;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
