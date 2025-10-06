@@ -1,16 +1,27 @@
 async function sendMessage() {
-  const input = document.getElementById("input").value;
-  const messagesDiv = document.getElementById("messages");
-  messagesDiv.innerHTML += `<div><b>You:</b> ${input}</div>`;
+  const prompt = document.getElementById("prompt").value;
+  const imageFile = document.getElementById("image").files[0];
 
-  const res = await fetch("http://localhost:3000/chat", {
+  let base64 = null;
+  if (imageFile) {
+    base64 = await fileToBase64(imageFile);
+  }
+
+  const res = await fetch("/.netlify/functions/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ prompt: input })
+    body: JSON.stringify({ prompt, image: base64 })
   });
 
   const data = await res.json();
-  const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No reply";
-  messagesDiv.innerHTML += `<div><b>Gemini:</b> ${reply}</div>`;
-  document.getElementById("input").value = "";
+  console.log(data);
+}
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result.split(",")[1]);
+    reader.onerror = reject;
+  });
 }
