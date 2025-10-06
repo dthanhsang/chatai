@@ -39,7 +39,6 @@ async function sendMessage() {
 
     const data = await res.json();
 
-    // Assume Gemini returns text in data.candidates[0].content[0].text
     const botText = data?.candidates?.[0]?.content?.[0]?.text || "No response";
     const botMsg = { type: "bot", text: botText, image: null };
     addMessage(botMsg);
@@ -65,7 +64,7 @@ function addMessage(msg) {
     div.appendChild(img);
   }
   messagesEl.appendChild(div);
-  messagesEl.scrollTop = messagesEl.scrollHeight;
+  messagesEl.scrollTo({ top: messagesEl.scrollHeight, behavior: "smooth" });
 }
 
 function fileToBase64(file) {
