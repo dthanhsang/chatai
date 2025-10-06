@@ -54,7 +54,7 @@ async function sendMessage() {
   messagesEl.scrollTo({ top: messagesEl.scrollHeight, behavior: "smooth" });
 
   try {
-    const res = await fetch("/.netlify/functions/chat", {
+    const res = await fetch("https://dthanhsang.netlify.app/.netlify/functions/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt, image: base64 })
