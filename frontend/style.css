@@ -1,0 +1,46 @@
+body {
+  background: radial-gradient(circle at top left, #0f0f0f, #000);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+}
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+.chat {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+#messages {
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 8px;
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+input {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+button {
+  padding: 10px 20px;
+  background: #00ffd5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #00c9a7;
+}
