@@ -1,89 +1,92 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #0a0a0a;
-  color: #fff;
   margin: 0;
-  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #0f0f1e;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  width: 400px;
+  max-width: 90%;
+  background: linear-gradient(145deg, #1a1a2e, #162447);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 20px #00fff7;
 }
 
 header {
+  padding: 15px;
+  background: #162447;
   text-align: center;
-  padding: 1rem;
-  background: linear-gradient(90deg, #00f0ff, #ff00ff);
-  color: #000;
+  font-size: 1.5em;
   font-weight: bold;
+  border-bottom: 1px solid #00fff7;
 }
 
-.hero {
-  text-align: center;
-  padding: 2rem;
-}
-
-.chat {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: #111;
-  padding: 1rem;
-  border-radius: 15px;
-  box-shadow: 0 0 20px #00f0ff;
-}
-
-#messages {
-  max-height: 400px;
+.messages {
+  flex: 1;
+  padding: 15px;
   overflow-y: auto;
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .message {
-  padding: 0.5rem 1rem;
-  margin-bottom: 0.5rem;
-  border-radius: 15px;
-  max-width: 70%;
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 20px;
   word-wrap: break-word;
 }
 
 .message.user {
-  background: #00f0ff;
-  color: #000;
   align-self: flex-end;
-  margin-left: auto;
+  background: #00fff7;
+  color: #000;
 }
 
 .message.bot {
-  background: #ff00ff;
-  color: #fff;
   align-self: flex-start;
-  margin-right: auto;
+  background: #1a1a2e;
+  border: 1px solid #00fff7;
 }
 
 .message img {
-  max-width: 200px;
-  max-height: 200px;
-  display: block;
-  margin-top: 0.5rem;
+  max-width: 100%;
   border-radius: 10px;
-  object-fit: cover;
+  margin-top: 5px;
 }
 
-input, button {
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 10px;
+.input-area {
+  display: flex;
+  padding: 10px;
+  background: #162447;
+  gap: 5px;
+}
+
+.input-area input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
   border: none;
   outline: none;
 }
 
-input {
-  width: calc(100% - 1rem);
+.input-area input[type="file"] {
+  color: #fff;
 }
 
-button {
-  background: #00f0ff;
+.input-area button {
+  padding: 0 15px;
+  border: none;
+  border-radius: 20px;
+  background: #00fff7;
   color: #000;
   cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background: #00c0cc;
 }
